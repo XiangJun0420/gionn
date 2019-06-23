@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="offer.css" type="text/css" />
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+		.demo{
+			padding: 2em 0;
+		}
+		a:hover,a:focus{
+		    text-decoration: none;
+		    outline: none;
+		}
+		.tab .nav-tabs{
+		    border: none;
+		    border-bottom: 2px solid #079fc9;
+		    margin: 0;
+		}
+		.tab .nav-tabs li a{
+		    padding: 10px 20px;
+		    margin: 0 10px -1px 0;
+		    font-size: 17px;
+		    font-weight: 600;
+		    color: #293241;
+		    text-transform: uppercase;
+		    border: 2px solid #e6e5e1;
+		    border-bottom: none;
+		    border-radius: 5px 5px 0 0;
+		    z-index: 1;
+		    position: relative;
+		    transition: all 0.3s ease 0s;
+		}
+		.tab .nav-tabs li a:hover,
+		.tab .nav-tabs li.active a{
+		    background: #fff;
+		    color: #079fc9;
+		    border: 2px solid #079fc9;
+		    border-bottom-color: transparent;
+		}
+		.tab .nav-tabs li a:before{
+		    content: "";
+		    display: block;
+		    height: 2px;
+		    background: #fff;
+		    position: absolute;
+		    bottom: -2px;
+		    left: 0;
+		    right: 0;
+		    transform: scaleX(0);
+		    transition: all 0.3s ease-in-out 0s;
+		}
+		.tab .nav-tabs li.active a:before,
+		.tab .nav-tabs li a:hover:before{ transform: scaleX(1); }
+		.tab .tab-content{
+		    padding: 10px;
+		    font-size: 17px;
+		    color: #6f6f6f;
+		    line-height: 30px;
+		    letter-spacing: 1px;
+		    position: relative;
+		}
+		@media only screen and (max-width: 479px){
+		    .tab .nav-tabs{ border: none; }
+		    .tab .nav-tabs li{
+		        width: 100%;
+		        text-align: center;
+		        margin-bottom: 15px;
+		    }
+		    .tab .nav-tabs li a{
+		        margin: 0;
+		        border-bottom: 2px solid transparent;
+		    }
+		    .tab .nav-tabs li a:before{
+		        content: "";
+		        width: 100%;
+		        height: 2px;
+		        background: #079fc9;
+		        position: absolute;
+		        bottom: -2px;
+		        left: 0;
+		    }
+		}
+	</style>
+</head>
+
+<body> 
+    <div class="htmleaf-container" id="senntaku" >
+        <header class="htmleaf-header">
+            <h1>取扱品目一覧選択 </h1>
+        </header>
+        <a class="list-group-item" data-toggle="modal" data-target="#modal" onclick="xx()"> 選択が終わったらこちらをクリックしてください。 </a>
+        <div class="demo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-9">
+                        <div class="tab" role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">電化製品</a></li>
+                                <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">事務用品・オフィス家具</a></li>
+                                <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">家具</a></li>
+                                <li role="presentation"><a href="#Section4" aria-controls="messages" role="tab" data-toggle="tab">その他</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content tabs">
+                                <div role="tabpanel" class="tab-pane fade in active" id="Section1">
+                                    <h3>電化製品</h3>
+                                    
+                                    <table class="tbl2 col3_table" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>パソコン画面</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-1-1');"><strong>-</strong></button>
+                                                    <input id="inputVal1-1-1" name="パソコン画面" onblur="b(this.value,'inputVal1-1-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-1-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>テレビ （14～21インチ）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-1-2');"><strong>-</strong></button>
+                                                    <input id="inputVal1-1-2" name="テレビ （14～21インチ）" onblur="b(this.value,'inputVal1-1-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-1-2');"><strong>+</strong></button>
+                                            </th>					
+                                            <th class="th-border">
+                                                <p>テレビ （22～36インチ）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-1-3');"><strong>-</strong></button>
+                                                    <input id="inputVal1-1-3" name="テレビ （22～36インチ）" onblur="b(this.value,'inputVal1-1-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-1-3');"><strong>+</strong></button>
+                                            </th>				
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>食器洗浄機</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-2-1');"><strong>-</strong></button>
+                                                    <input id="inputVal1-2-1" name="食器洗浄機" onblur="b(this.value,'inputVal1-2-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-2-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>テレビ （36インチ～）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-2-2');"><strong>-</strong></button>
+                                                    <input id="inputVal1-2-2" name="テレビ （36インチ～）" onblur="b(this.value,'inputVal1-2-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-2-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>ミニ冷蔵庫 (高さ45cm以下)</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-2-3');"><strong>-</strong></button>
+                                                    <input id="inputVal1-2-3" name="ミニ冷蔵庫 (高さ45cm以下)" onblur="b(this.value,'inputVal1-2-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-2-3');"><strong>+</strong></button>
+                                            </th>				
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>冷蔵庫 (高さ160cm以下)</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-3-1');"><strong>-</strong></button>
+                                                    <input id="inputVal1-3-1" name="冷蔵庫 (高さ160cm以下)" onblur="b(this.value,'inputVal1-3-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-3-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>冷蔵庫 (高さ160cm以上)</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-3-2');"><strong>-</strong></button>
+                                                    <input id="inputVal1-3-2" name="冷蔵庫 (高さ160cm以上)" onblur="b(this.value,'inputVal1-3-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-3-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>洗濯機</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-3-3');"><strong>-</strong></button>
+                                                    <input id="inputVal1-3-3" name="洗濯機" onblur="b(this.value,'inputVal1-3-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-3-3');"><strong>+</strong></button>
+                                            </th>				
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>乾燥機</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-4-1');"><strong>-</strong></button>
+                                                    <input id="inputVal1-4-1" name="乾燥機" onblur="b(this.value,'inputVal1-4-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-4-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>照明</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-4-2');"><strong>-</strong></button>
+                                                    <input id="inputVal1-4-2" name="照明" onblur="b(this.value,'inputVal1-4-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-4-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>電子ピアノ</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-4-3');"><strong>-</strong></button>
+                                                    <input id="inputVal1-4-3" name="電子ピアノ" onblur="b(this.value,'inputVal1-4-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-4-3');"><strong>+</strong></button>
+                                            </th>			
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>スピーカー（小）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-5-1');"><strong>-</strong></button>
+                                                    <input id="inputVal1-5-1" name="スピーカー（小）" onblur="b(this.value,'inputVal1-5-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-5-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>マッサージチェア</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-5-2');"><strong>-</strong></button>
+                                                    <input id="inputVal1-5-2" name="マッサージチェア" onblur="b(this.value,'inputVal1-5-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-5-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>スピーカー（中）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-5-3');"><strong>-</strong></button>
+                                                    <input id="inputVal1-5-3" name="スピーカー（中）" onblur="b(this.value,'inputVal1-5-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-5-3');"><strong>+</strong></button>
+                                            </th>					
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>健康器具（小）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-6-1');"><strong>-</strong></button>
+                                                    <input id="inputVal1-6-1" name="健康器具（小）" onblur="b(this.value,'inputVal1-6-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-6-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>スピーカー（大）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-6-2');"><strong>-</strong></button>
+                                                    <input id="inputVal1-6-2" name="スピーカー（大）" onblur="b(this.value,'inputVal1-6-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-6-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>健康器具（中）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-6-3');"><strong>-</strong></button>
+                                                    <input id="inputVal1-6-3" name="健康器具（中）" onblur="b(this.value,'inputVal1-6-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-6-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>健康器具（大） ※要分解</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal1-7-1');"><strong>-</strong></button>
+                                                    <input id="inputVal1-7-1" name="健康器具（大） ※要分解" onblur="b(this.value,'inputVal1-7-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal1-7-1');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="Section2">
+                                    <h3>事務用品・オフィス家具</h3>
+                                    <table class="tbl2" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>事務椅子</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-1-1');"><strong>-</strong></button>
+                                                    <input id="inputVal2-1-1" name="事務椅子" onblur="b(this.value,'inputVal2-1-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-1-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>応接セット</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-1-2');"><strong>-</strong></button>
+                                                    <input id="inputVal2-1-2" name="応接セット" onblur="b(this.value,'inputVal2-1-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-1-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>机（小）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-1-3');"><strong>-</strong></button>
+                                                    <input id="inputVal2-1-3" name="机（小）" onblur="b(this.value,'inputVal2-1-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-1-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>スチール棚（大）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-2-1');"><strong>-</strong></button>
+                                                    <input id="inputVal2-2-1" name="スチール棚（大）" onblur="b(this.value,'inputVal2-2-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-2-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>カウンター</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-2-2');"><strong>-</strong></button>
+                                                    <input id="inputVal2-2-2" name="カウンター" onblur="b(this.value,'inputVal2-2-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-2-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>机（大）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-2-3');"><strong>-</strong></button>
+                                                    <input id="inputVal2-2-3" name="机（大）" onblur="b(this.value,'inputVal2-2-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-2-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>スチール棚（小）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-3-1');"><strong>-</strong></button>
+                                                    <input id="inputVal2-3-1" name="スチール棚（小）" onblur="b(this.value,'inputVal2-3-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-3-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>パソコン台</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-3-2');"><strong>-</strong></button>
+                                                    <input id="inputVal2-3-2" name="パソコン台" onblur="b(this.value,'inputVal2-3-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-3-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>キャビネット（大）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-3-3');"><strong>-</strong></button>
+                                                    <input id="inputVal2-3-3" name="キャビネット（大）" onblur="b(this.value,'inputVal2-3-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-3-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>ロッカー（大）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-4-1');"><strong>-</strong></button>
+                                                    <input id="inputVal2-4-1" name="ロッカー（大）" onblur="b(this.value,'inputVal2-4-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-4-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>袖机</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-4-2');"><strong>-</strong></button>
+                                                    <input id="inputVal2-4-2" name="袖机" onblur="b(this.value,'inputVal2-4-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-4-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>キャビネット（小）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-4-3');"><strong>-</strong></button>
+                                                    <input id="inputVal2-4-3" name="キャビネット（小）" onblur="b(this.value,'inputVal2-4-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-4-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>ロッカー（小）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-5-1');"><strong>-</strong></button>
+                                                    <input id="inputVal2-5-1" name="ロッカー（小）" onblur="b(this.value,'inputVal2-5-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-5-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>コピー機</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-5-2');"><strong>-</strong></button>
+                                                    <input id="inputVal2-5-2" name="コピー機" onblur="b(this.value,'inputVal2-5-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-5-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>ホワイトボード(幅1m以下)</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal2-5-3');"><strong>-</strong></button>
+                                                    <input id="inputVal2-5-3" name="ホワイトボード（幅1m以下）" onblur="b(this.value,'inputVal2-5-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal2-5-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="Section3">
+                                    <h3>タンス類</h3>
+                                    <table class="tbl2" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>洋タンス（3開き以上）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-1-1-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-1-1-1" name="洋タンス（3開き以上）" onblur="b(this.value,'inputVal3-1-1-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-1-1-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>洋タンス（2開き）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-1-1-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-1-1-2" name="洋タンス（2開き）" onblur="b(this.value,'inputVal3-1-1-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-1-1-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>洋タンス（1開き）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-1-1-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-1-1-3" name="洋タンス（1開き）" onblur="b(this.value,'inputVal3-1-1-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-1-1-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>和ダンス（大）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-1-2-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-1-2-1" name="和ダンス（大）" onblur="b(this.value,'inputVal3-1-2-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-1-2-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>和ダンス（中）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-1-2-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-1-2-2" name="和ダンス（中）" onblur="b(this.value,'inputVal3-1-2-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-1-2-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>整理ダンス（大）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-1-2-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-1-2-3" name="整理ダンス（大）" onblur="b(this.value,'inputVal3-1-2-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-1-2-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>整理ダンス（中）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-1-3-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-1-3-1" name="整理ダンス（中）" onblur="b(this.value,'inputVal3-1-3-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-1-3-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>ベビータンス</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-1-3-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-1-3-2" name="ベビータンス" onblur="b(this.value,'inputVal3-1-3-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-1-3-2');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                    </table>
+
+                                    <h3>棚類</h3>
+                                    <table class="tbl2" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>食器棚（大）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-2-1-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-2-1-1" name="食器棚（大）" onblur="b(this.value,'inputVal3-2-1-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-2-1-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>食器棚（中）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-2-1-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-2-1-2" name="食器棚（中）" onblur="b(this.value,'inputVal3-2-1-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-2-1-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>食器棚（小）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-2-1-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-2-1-3" name="食器棚（小）" onblur="b(this.value,'inputVal3-2-1-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-2-1-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>カラーボックス （3段）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-2-2-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-2-2-1" name="カラーボックス （3段）" onblur="b(this.value,'inputVal3-2-2-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-2-2-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>カラーボックス （5段）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-2-2-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-2-2-2" name="カラーボックス （5段）" onblur="b(this.value,'inputVal3-2-2-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-2-2-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>スチール棚</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-2-2-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-2-2-3" name="スチール棚" onblur="b(this.value,'inputVal3-2-2-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-2-2-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>飾り棚（大）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-2-3-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-2-3-1" name="飾り棚（大）" onblur="b(this.value,'inputVal3-2-3-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-2-3-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>飾り棚（中）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-2-3-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-2-3-2" name="飾り棚（中）" onblur="b(this.value,'inputVal3-2-3-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-2-3-2');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                    </table>
+
+                                    <h3>チェスト類</h3>
+                                    <table class="tbl2" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>チェスト</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-3-1-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-3-1-1" name="チェスト" onblur="b(this.value,'inputVal3-3-1-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-3-1-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>テレビ台</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-3-1-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-3-1-2" name="テレビ台" onblur="b(this.value,'inputVal3-3-1-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-3-1-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>籐チェスト</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-3-1-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-3-1-3" name="籐チェスト" onblur="b(this.value,'inputVal3-3-1-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-3-1-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>ローボード</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-3-2-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-3-2-1" name="ローボード" onblur="b(this.value,'inputVal3-3-2-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-3-2-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>サイドボード</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-3-2-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-3-2-2" name="サイドボード" onblur="b(this.value,'inputVal3-3-2-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-3-2-2');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                    </table>
+
+                                    <h3>椅子類</h3>
+                                    <table class="tbl2" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>ソファー<br />（一人がけ）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-4-1-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-4-1-1" name="ソファー （一人がけ）" onblur="b(this.value,'inputVal3-4-1-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-4-1-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>ソファー<br />（二人がけ）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-4-1-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-4-1-2" name="ソファー （二人がけ）" onblur="b(this.value,'inputVal3-4-1-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-4-1-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>ソファー<br />（三人がけ）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-4-1-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-4-1-3" name="ソファー （三人がけ）" onblur="b(this.value,'inputVal3-4-1-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-4-1-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>椅子</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-4-2-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-4-2-1" name="椅子" onblur="b(this.value,'inputVal3-4-2-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-4-2-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>座椅子</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-4-2-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-4-2-2" name="座椅子" onblur="b(this.value,'inputVal3-4-2-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-4-2-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>ソファーベッド</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-4-2-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-4-2-3" name="ソファーベッド" onblur="b(this.value,'inputVal3-4-2-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-4-2-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                    </table>
+
+                                    <h3>テーブル類</h3>
+                                    <table class="tbl2" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>こたつ</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-5-1-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-5-1-1" name="こたつ" onblur="b(this.value,'inputVal3-5-1-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-5-1-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>ローテーブル</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-5-1-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-5-1-2" name="ローテーブル" onblur="b(this.value,'inputVal3-5-1-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-5-1-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>ガラステーブル</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-5-1-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-5-1-3" name="ガラステーブル" onblur="b(this.value,'inputVal3-5-1-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-5-1-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>パソコンラック</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-5-2-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-5-2-1" name="パソコンラック" onblur="b(this.value,'inputVal3-5-2-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-5-2-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>カウンターテーブル</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-5-2-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-5-2-2" name="カウンターテーブル" onblur="b(this.value,'inputVal3-5-2-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-5-2-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>カウンター</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-5-2-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-5-2-3" name="カウンター" onblur="b(this.value,'inputVal3-5-2-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-5-2-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>学習机</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-5-3-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-5-3-1" name="学習机" onblur="b(this.value,'inputVal3-5-3-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-5-3-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>食卓テーブル</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-5-3-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-5-3-2" name="食卓テーブル" onblur="b(this.value,'inputVal3-5-3-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-5-3-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>机</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-5-3-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-5-3-3" name="机" onblur="b(this.value,'inputVal3-5-3-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-5-3-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                    </table>
+
+                                    <h3>収納類</h3>
+                                    <table class="tbl2" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>プラスチック衣装 <br/>ケース1段</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-6-1-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-6-1-1" name="プラスチック衣装 ケース1段" onblur="b(this.value,'inputVal3-6-1-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-6-1-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>プラスチック衣装 <br/>ケース2段以上</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-6-1-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-6-1-2" name="プラスチック衣装 ケース2段以上" onblur="b(this.value,'inputVal3-6-1-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-6-1-2');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                    </table>
+
+                                    <h3>ベッド類</h3>
+                                    <table class="tbl2" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>Sベッド</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-7-1-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-7-1-1" name="Sベッド" onblur="b(this.value,'inputVal3-7-1-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-7-1-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>SWベッド</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-7-1-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-7-1-2" name="SWベッド" onblur="b(this.value,'inputVal3-7-1-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-7-1-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>Wベッド</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-7-1-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-7-1-3" name="Wベッド" onblur="b(this.value,'inputVal3-7-1-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-7-1-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>折りたたみ式ベッド</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-7-2-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-7-2-1" name="折りたたみ式ベッド" onblur="b(this.value,'inputVal3-7-2-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-7-2-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>Sマットのみ</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-7-2-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-7-2-2" name="Sマットのみ" onblur="b(this.value,'inputVal3-7-2-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-7-2-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>SWマットのみ</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-7-2-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-7-2-3" name="SWマットのみ" onblur="b(this.value,'inputVal3-7-2-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-7-2-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>Wマットのみ<br/>&nbsp;</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-7-3-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-7-3-1" name="Wマットのみ" onblur="b(this.value,'inputVal3-7-3-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-7-3-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>2段ベッド <br/>(分解済み)</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-7-3-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-7-3-2" name="2段ベッド (分解済み)" onblur="b(this.value,'inputVal3-7-3-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-7-3-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>ウォーターベッド <br/>（水抜き済み）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-7-3-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-7-3-3" name="ウォーターベッド （水抜き済み）" onblur="b(this.value,'inputVal3-7-3-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-7-3-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                    </table>
+
+                                    <h3>その他</h3>
+                                    <table class="tbl2" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>布団</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-8-1-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-8-1-1" name="布団" onblur="b(this.value,'inputVal3-8-1-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-8-1-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>カーペット （６畳）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-8-1-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-8-1-2" name="カーペット （６畳）" onblur="b(this.value,'inputVal3-8-1-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-8-1-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>ウッドカーペット （６畳）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-8-1-3');"><strong>-</strong></button>
+                                                    <input id="inputVal3-8-1-3" name="ウッドカーペット （６畳）" onblur="b(this.value,'inputVal3-8-1-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-8-1-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>絨毯</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-8-2-1');"><strong>-</strong></button>
+                                                    <input id="inputVal3-8-2-1" name="絨毯" onblur="b(this.value,'inputVal3-8-2-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-8-2-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>ブラインドカーテン</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-8-2-2');"><strong>-</strong></button>
+                                                    <input id="inputVal3-8-2-2" name="ブラインドカーテン" onblur="b(this.value,'inputVal3-8-2-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-8-2-2');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                    </table>
+
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="Section4">
+                                    <h3>その他</h3>
+                                    <table class="tbl2" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>自転車</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal4-1-1');"><strong>-</strong></button>
+                                                    <input id="inputVal4-1-1" name="自転車" onblur="b(this.value,'inputVal4-1-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal4-1-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>アルミホイール (タイヤつき)</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal4-1-2');"><strong>-</strong></button>
+                                                    <input id="inputVal4-1-2" name="アルミホイール (タイヤつき)" onblur="b(this.value,'inputVal4-1-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal4-1-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>物置(M)</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal4-1-3');"><strong>-</strong></button>
+                                                    <input id="inputVal4-1-3" name="物置(M)" onblur="b(this.value,'inputVal4-1-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal4-1-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>バイク</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal4-2-1');"><strong>-</strong></button>
+                                                    <input id="inputVal4-2-1" name="バイク" onblur="b(this.value,'inputVal4-2-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal4-2-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>鉄ホイール</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal4-2-2');"><strong>-</strong></button>
+                                                    <input id="inputVal4-2-2" name="鉄ホイール" onblur="b(this.value,'inputVal4-2-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal4-2-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>物置(S) ※要分解</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal4-2-3');"><strong>-</strong></button>
+                                                    <input id="inputVal4-2-3" name="物置(S) ※要分解" onblur="b(this.value,'inputVal4-2-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal4-2-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>ピアノ</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal4-3-1');"><strong>-</strong></button>
+                                                    <input id="inputVal4-3-1" name="ピアノ" onblur="b(this.value,'inputVal4-3-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal4-3-1');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>鉄ホイール （タイヤつき）</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal4-3-2');"><strong>-</strong></button>
+                                                    <input id="inputVal4-3-2" name="鉄ホイール （タイヤつき）" onblur="b(this.value,'inputVal4-3-2');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal4-3-2');"><strong>+</strong></button>
+                                            </th>
+                                            <th class="th-border">
+                                                <p>エレクトーン(電子オルガン)</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal4-3-3');"><strong>-</strong></button>
+                                                    <input id="inputVal4-3-3" name="エレクトーン(電子オルガン)" onblur="b(this.value,'inputVal4-3-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal4-3-3');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="th-border">
+                                                <p>タイヤ</p>
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal4-4-1');"><strong>-</strong></button>
+                                                    <input id="inputVal4-4-1" name="タイヤ" onblur="b(this.value,'inputVal4-4-1');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal4-4-1');"><strong>+</strong></button>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-container" id="mitumorihyo" style="display: none;" >
+        <div id="left" class="left-container">
+            <header class="left-header">
+                <div class="left-header-1">
+                    {{title}}
+                </div>
+                <div class="left-header-2">
+                    <div class="left-header-2-1">{{subTitle1}}</div>
+                    <div class=left-header-2-2>{{subTitle2}}</div>
+                </div>
+            </header>
+            <div class="left-content">
+                <div class=left-content-1>
+                    <div class=left-content-1-1>
+                        <div class=left-content-1-1-1>
+                            <label for=custCode>お客様番号</label>
+                            &nbsp;&nbsp;<input type=input id=custCode name=custCode style="width:60% ; text-align:left">
+                        </div>
+                    </div>
+                    <div class=left-content-1-2>
+                        <div class=left-content-1-2-1>
+                            <label for=moveDate>引越作業日</label>
+                            &nbsp;&nbsp;<input type=input id=moveDate name=moveDate style="width:60% ; text-align:left">
+                        </div>
+                        <div class=left-content-1-2-2>
+                            <label for=sendDate>届け日</label>
+                            &nbsp;&nbsp;<input type=input id=sendDate name=sendDate style="width:60% ; text-align:left">
+                        </div>
+                        <div class=left-content-1-2-3>※上記時刻は作業開始予定時刻です。</div>
+                    </div>
+                    <div class=left-content-1-3>
+                        <div class=left-content-1-2-1>
+                            <label for=moveDate>梱包作業日</label>
+                            &nbsp;&nbsp;<input type=input id=moveDate name=moveDate style="width:60% ; text-align:left">
+                        </div>
+                        <div class=left-content-1-2-2>
+                            <label for=sendDate>解梱作業日</label>
+                            &nbsp;&nbsp;<input type=input id=sendDate name=sendDate style="width:60% ; text-align:left">
+                        </div>
+                    </div>
+                </div>
+                <div class=left-content-2>
+                    <div class=left-content-2-1>
+                        <div class=left-content-2-1-1>
+                            <label for=id211>1.現着</label>
+                            <input id=id211 type=text>
+                        </div>
+                        <div class=left-content-2-1-2>
+                            <label for=id211>2.行先</label>
+                            <input id=id211 type=text>
+                        </div>
+                        <div class=left-content-2-1-3>
+                            <label for=id211>3.</label>
+                            <input id=id211 type=text>
+                        </div>
+                        <div class=left-content-2-1-4>
+                            <label for=id211>4.</label>
+                            <input id=id211 type=text>
+                        </div>
+                    </div>
+                    <div class=left-content-2-2>
+                        <div class=left-content-2-2-1>お支払い方法</div>
+                        <div class=left-content-2-2-2><input id=id211 type=text style="width:100% ; text-align:left"></div>
+                        <div class=left-content-2-2-3><input id=id211 type=text style="width:100% ; text-align:left"></div>
+                        <div class=left-content-2-2-4>
+                            <div class=left-content-2-2-4-1>お支払い金額</div>
+                            &nbsp;&nbsp;<input id=id211 type=text style="width:100% ; text-align:left">
+                        </div>
+                    </div>
+                </div>
+                <div class=left-content-3>
+                    <div class=left-content-3-1>
+                        <div class=left-content-3-1-1>引き続き</div>
+                        <div class=left-content-3-1-2>バッグ</div>
+                    </div>
+                    <div class=left-content-3-2>
+                        <div class=left-content-3-2-1>&nbsp;</div>
+                        <div class=left-content-3-2-2>__</div>
+                        <div class=left-content-3-2-3>&nbsp;</div>
+                    </div>
+                </div>
+                <div class=left-content-4>
+                    <div class=left-content-4-1><h4><b>その他附帯サービス（明細）</b></h4></div>
+                    <div class=left-content-4-2>
+                        <table class=left-content-4-2-1>
+                            <tr>
+                                <th colspan="3">梱包作業（当日持参資材）</th>
+                            </tr>
+                            <tr>
+                                <th>項目</th>
+                                <th>数量</th>
+                                <th>金銭</th>
+                            </tr>
+                            <tr v-for="item in showArr">
+                                <td >&nbsp;{{item.thName}}</td><td style="width:3vw">&nbsp;{{item.thCount}}</td><td><input type=text style="width:3vw"></td>
+                            </tr>
+                            <tr v-for="n in otherLine">
+                                <td><input type=text style="width:100% ; text-align:left"></td>
+                                <td><input type=text style="width:3vw"></td>
+                                <td><input type=text style="width:3vw"></td>
+                            </tr>
+                            <tr>
+                                <th>&nbsp;小計</th>
+                                <td colspan=2><input type=text style="width:6vw"></td>
+                            </tr>
+                        </table>
+                        <table class=left-content-4-2-2>
+                            <tr>
+                                <th colspan="4">資材販売</th>
+                            </tr>
+                            <tr>
+                                <th>項目</th>
+                                <th>数量</th>
+                                <th>金額</th>
+                            </tr>
+                            <tr v-for="item in showLine">
+                                <td>&nbsp;{{item.thName}}</td>
+                                <td style="width:3vw">&nbsp;{{item.thCount}}</td>
+                                <td><input type=text style="width:3vw" /></td>
+                            </tr>
+                            <tr v-for="n in otherShowLine">
+                                <td><input type=text style="width:100% ; text-align:left"></td>
+                                <td><input type=text style="width:3vw"></td>
+                                <td><input type=text style="width:3vw"></td>
+                            </tr>
+                            <tr>
+                                <th>&nbsp;小計</th>
+                                <td colspan=3><input type=text style="width:6vw" /></td>
+                            </tr>
+                        </table>
+                        <table class=left-content-4-2-3>
+                            <tr>
+                                <th>サービス名</th>
+                                <td>項目</td>
+                                <td>数量</td>
+                                <td>金額</td>
+                                <td>届日</td>
+                                <td>数量</td>
+                                <td>金額</td>
+                            </tr>
+                            <tr>
+                                <th rowspan="5">電気工事</th>
+                                <td colspan="4"><input type=text /></td>
+                                <td><input type=text style="width:3vw" /></td>
+                                <td><input type=text style="width:3vw" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="4"><input type=text /></td>
+                                <td><input type=text style="width:3vw" /></td>
+                                <td><input type=text style="width:3vw" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><input type=text style="width:5vw" /></td>
+                                <th style="width:3vw" >小計</th>
+                                <td><input type=text style="width:3vw" /></td>
+                                <td><input type=text style="width:3vw" /></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" colspan="6" >
+                                    <input type=text style="width:95% ; text-align:left" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <header class="right-header">
+                <div class=right-header-2>
+                    <div class=right-header-2-1>
+                        <div class=right-header-2-1-1>ぎおん</div>
+                    </div>
+                    <div class=right-header-2-2>
+                        <div class=right-header-2-2-1>リサイクル</div>
+                        <div class=right-header-2-2-2>0120-000-629</div>
+                        <div class=right-header-2-2-3>http://www.gionrecycle.com/</div>
+                    </div>
+                </div>
+            </header>
+            <div class="right-content">
+                <div class=right-content-1>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                <div class=right-content-2>
+                    <table class=right-content-2-1>
+                        <tr>
+                            <th class=right-content-2-1-1 rowspan=9>基本料金</th>
+                            <td class=right-content-2-1-2 rowspan=4></td>
+                            <td class=right-content-2-1-3>&nbsp;</td>
+                            <td class=right-content-2-1-4>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;小計</th>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class=right-content-3>
+                    <div class=right-content-3-1>
+                        <table class=right-content-3-1-1>
+                            <tr>
+                                <th class=right-content-3-1-1-1 colspan=4 style="text-align: center;">ご家財明細</th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center;">家財名</th>
+                                <th style="text-align: center;">1</th>
+                                <th style="text-align: center;">2</th>
+                                <th style="text-align: center;">3</th>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr>
+                                <th class=right-content-3-1-1-1 colspan=4 style="text-align: center;">家電リサイクル</th>
+                            </tr>
+                            <tr>
+                                <th style="text-align: center;">家財名</th>
+                                <th style="text-align: center;">1</th>
+                                <th style="text-align: center;">2</th>
+                                <th style="text-align: center;">3</th>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                        <table class=right-content-3-1-2>
+                            <tr></tr>
+                        </table>
+                    </div>
+                    <div class=right-content-3-2>
+                        <table class=right-content-3-2-1>
+                            <tr>
+                                <th class=right-content-3-2-1-1 rowspan=16>その他</th>
+                                <td class=right-content-3-2-1-2>&nbsp;</td>
+                                <td class=right-content-3-2-1-3>&nbsp;</td>
+                            </tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><th>&nbsp;小計</th><th>&nbsp;</th></tr>
+                            <tr>
+                                <th rowspan=3>総計</th>
+                                <th>合計</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <th>総計</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                            <tr style="height: 8vh;">
+                                <td colspan=3>料金総合計金額</td>
+                            </tr>
+                            
+                        </table>
+                        <table  class=right-content-3-2-1>
+                        <tr style="height: 8vh;">
+                            <th style="width: 8vw;" >Sign</th>
+                            <td>&nbsp;</td>
+                        </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <footer class="right-footer"></footer>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="exampleModalLabel">選択商品一覧 確認</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-bordered table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th>選択商品</th>
+                            <th>商品数確認</th>
+                        </tr>
+                    </thead>
+                    <tbody id = "modal-body-content">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">戻る</button>
+                <button type="button" class="btn btn-primary" onclick ="changeTo()" >完了</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="vue.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+<script src="layer/layer.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    var showArr = new Array();
+    var otherLineArr = new Array();
+    var showLineArr = new Array();
+    var otherShowLine = new Array();
+    
+    function xx(){
+         $("#modal-body-content :last-child").remove();
+         $("#modal-body-content :first-child").remove();
+        showArr.length = 0;
+        showLineArr.length = 0;
+        var allInputs = document.getElementsByTagName('input');
+
+        for (var i = 0; i < allInputs.length; i++) {
+            if (allInputs[i].type === 'text' && allInputs[i].id.indexOf('inputVal') == 0  && allInputs[i].value != 0) {
+                $("#modal-body-content").append("<tr><td>" + allInputs[i].name + "</td><td>" + allInputs[i].value + "</tr>");
+                if(showArr.length <= 11){
+                    showArr.push({thName: allInputs[i].name,thCount: allInputs[i].value});
+                } else {
+                    showLineArr.push({thName: allInputs[i].name,thCount: allInputs[i].value});
+                }
+            }
+        }
+
+        if(showArr.length < 12){
+            otherLineArr.length = 12 - showArr.length;
+            showLineArr.length = 0;
+            otherShowLine.push(1);
+            otherShowLine.length = 12;
+        }
+        if(showLineArr.length > 0){
+            otherLineArr.length = 0;
+            otherShowLine.length = 12 - showLineArr.length;
+        }
+
+
+    }
+    function changeTo(){
+        document.getElementById("senntaku").style.display="none";
+        document.getElementById("mitumorihyo").style.display="flex";
+        $('#modal').modal("hide");
+    }
+
+    function a(flag,id){
+        var nowVal = $("#" + id).val();
+        if(flag == '+'){
+            $("#" + id).val(parseInt(nowVal)+1);
+        }else if(flag == '-'){
+            if(nowVal != 0){
+                $("#" + id).val(nowVal-1);
+            }
+        }
+    }
+    function b(nowVal,id){
+        if(nowVal.length==0){
+            $("#" + id).val(1);
+        }
+    }
+
+    var header = new Vue({
+        el: '#left',
+        data: {
+            title: 'お 見 積 書',
+            subTitle1: '決 定',
+            subTitle2: '保 留',
+            small:    '2014/12/31　見積番号：0000000-000',
+            showArr:  this.showArr,
+            showLine: this.showLineArr,
+            otherLine: this.otherLineArr,
+            otherShowLine:this.otherShowLine
+        }
+    });
+
+</script>
+
+</html>
