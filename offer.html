@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="offer.css" type="text/css" />
-    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
 		.demo{
 			padding: 2em 0;
@@ -692,9 +692,9 @@
                                                 <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-7-3-2');"><strong>+</strong></button>
                                             </th>
                                             <th class="th-border">
-                                                <p>ウォーターベッド <br/>（水抜き済み）</p>
+                                                <p>ウォーターベッド <br/>(水抜き済み)</p>
                                                 <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('-','inputVal3-7-3-3');"><strong>-</strong></button>
-                                                    <input id="inputVal3-7-3-3" name="ウォーターベッド （水抜き済み）" onblur="b(this.value,'inputVal3-7-3-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
+                                                    <input id="inputVal3-7-3-3" name="ウォーターベッド(水抜き済み)" onblur="b(this.value,'inputVal3-7-3-3');" onkeyup="this.value=this.value.replace(/\D/gi,'')" value="0" type="text" style="min-width: 2.5rem">
                                                 <button style="min-width: 2.5rem" class="btn btn-increment btn-outline-secondary" type="button" onclick="a('+','inputVal3-7-3-3');"><strong>+</strong></button>
                                             </th>
                                         </tr>
@@ -834,13 +834,13 @@
                 <div class=left-content-1>
                     <div class=left-content-1-1>
                         <div class=left-content-1-1-1>
-                            <label for=custCode>お客様番号</label>
+                            <label for=custCode>客様番号</label>
                             &nbsp;&nbsp;<input type=input id=custCode name=custCode style="width:60% ; text-align:left">
                         </div>
                     </div>
                     <div class=left-content-1-2>
                         <div class=left-content-1-2-1>
-                            <label for=moveDate>引越作業日</label>
+                            <label for=moveDate>引越日</label>
                             &nbsp;&nbsp;<input type=input id=moveDate name=moveDate style="width:60% ; text-align:left">
                         </div>
                         <div class=left-content-1-2-2>
@@ -851,11 +851,11 @@
                     </div>
                     <div class=left-content-1-3>
                         <div class=left-content-1-2-1>
-                            <label for=moveDate>梱包作業日</label>
+                            <label for=moveDate>梱包日</label>
                             &nbsp;&nbsp;<input type=input id=moveDate name=moveDate style="width:60% ; text-align:left">
                         </div>
                         <div class=left-content-1-2-2>
-                            <label for=sendDate>解梱作業日</label>
+                            <label for=sendDate>解梱日</label>
                             &nbsp;&nbsp;<input type=input id=sendDate name=sendDate style="width:60% ; text-align:left">
                         </div>
                     </div>
@@ -913,12 +913,12 @@
                                 <th>金銭</th>
                             </tr>
                             <tr v-for="item in showArr">
-                                <td >&nbsp;{{item.thName}}</td><td style="width:3vw">&nbsp;{{item.thCount}}</td><td><input type=text style="width:3vw"></td>
+                                <td >&nbsp;{{item.thName}}</td><td style="width:3vw">&nbsp;{{item.thCount}}</td><td><input type=text style="width:6vw"></td>
                             </tr>
                             <tr v-for="n in otherLine">
                                 <td><input type=text style="width:100% ; text-align:left"></td>
                                 <td><input type=text style="width:3vw"></td>
-                                <td><input type=text style="width:3vw"></td>
+                                <td><input type=text style="width:6vw"></td>
                             </tr>
                             <tr>
                                 <th>&nbsp;小計</th>
@@ -937,19 +937,19 @@
                             <tr v-for="item in showLine">
                                 <td>&nbsp;{{item.thName}}</td>
                                 <td style="width:3vw">&nbsp;{{item.thCount}}</td>
-                                <td><input type=text style="width:3vw" /></td>
+                                <td><input type=text style="width:6vw" /></td>
                             </tr>
                             <tr v-for="n in otherShowLine">
                                 <td><input type=text style="width:100% ; text-align:left"></td>
                                 <td><input type=text style="width:3vw"></td>
-                                <td><input type=text style="width:3vw"></td>
+                                <td><input type=text style="width:6vw"></td>
                             </tr>
                             <tr>
                                 <th>&nbsp;小計</th>
                                 <td colspan=3><input type=text style="width:6vw" /></td>
                             </tr>
                         </table>
-                        <table class=left-content-4-2-3>
+                        <!-- <table class=left-content-4-2-3>
                             <tr>
                                 <th>サービス名</th>
                                 <td>項目</td>
@@ -981,7 +981,7 @@
                                     <input type=text style="width:95% ; text-align:left" />
                                 </td>
                             </tr>
-                        </table>
+                        </table> -->
                     </div>
                 </div>
             </div>
@@ -1131,14 +1131,16 @@
                                 <th>総計</th>
                                 <th>&nbsp;</th>
                             </tr>
-                            <tr style="height: 8vh;">
-                                <td colspan=3>料金総合計金額</td>
+                            <tr style="height: 2vh;">
+                                <td colspan=3><b>料金総合計金額</b></td>
                             </tr>
-                            
+                            <tr style="height: 8vh;">
+                                <td colspan=3><input type=text style="width:18vw"></td>
+                            </tr>
                         </table>
                         <table  class=right-content-3-2-1>
-                        <tr style="height: 8vh;">
-                            <th style="width: 8vw;" >Sign</th>
+                        <tr style="height: 6vh;">
+                            <th style="width: 3vw;" >Sign</th>
                             <td>&nbsp;</td>
                         </tr>
                         </table>
@@ -1182,9 +1184,9 @@
 </body>
 
 <script src="vue.js"></script>
-<script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
 <script src="layer/layer.js"></script>
-<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
     var showArr = new Array();
